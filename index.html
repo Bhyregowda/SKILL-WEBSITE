@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Seed Quality Identification System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Smart Seed Quality Identification System</h1>
+        <p class="tagline">Check seed quality before sowing and improve crop productivity</p>
+      </div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#check">Check Seed Quality</a>
+        <a href="#guide">Seed Guide</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HOME ===== -->
+    <section id="home" class="section">
+      <div class="container">
+        <div class="hero">
+          <div class="hero-text">
+            <h2>Good seed decides the harvest</h2>
+            <p>
+              Seed is the starting point of every crop. When the seed is good, plants come up
+              evenly, grow strong and give a better harvest. This tool helps you check a seed lot
+              <strong>before you sow it</strong>, using simple test values you can measure yourself.
+            </p>
+            <p>
+              Poor seed quality can cause <strong>low germination</strong>,
+              <strong>weak crops</strong> and <strong>financial loss</strong>, because you pay for
+              seed, land preparation, water and labour on a crop that may never grow well.
+            </p>
+            <a class="btn btn-primary" href="#check">Check my seeds</a>
+          </div>
+
+          <div class="hero-panel">
+            <h3>How the 100 marks are given</h3>
+            <div class="marks-bar" role="img" aria-label="Marks: germination 35, purity 25, moisture 15, appearance 10, size and weight 10, packaging 5">
+              <span class="m-germ" style="flex:35">35</span>
+              <span class="m-pur" style="flex:25">25</span>
+              <span class="m-moist" style="flex:15">15</span>
+              <span class="m-app" style="flex:10">10</span>
+              <span class="m-size" style="flex:10">10</span>
+              <span class="m-pack" style="flex:5">5</span>
+            </div>
+            <ul class="marks-legend">
+              <li><i class="m-germ"></i> Germination (35)</li>
+              <li><i class="m-pur"></i> Purity (25)</li>
+              <li><i class="m-moist"></i> Moisture (15)</li>
+              <li><i class="m-app"></i> Appearance (10)</li>
+              <li><i class="m-size"></i> Size and weight (10)</li>
+              <li><i class="m-pack"></i> Packaging (5)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cards three">
+          <article class="card">
+            <h3>Germination Check</h3>
+            <p>Find out how many seeds out of a sample actually sprout. Higher germination means a fuller, more even field.</p>
+          </article>
+          <article class="card">
+            <h3>Purity Check</h3>
+            <p>See how much of the lot is the real seed of your crop, without weed seeds, stones, dust or broken pieces.</p>
+          </article>
+          <article class="card">
+            <h3>Moisture &amp; Expiry Check</h3>
+            <p>Seeds that are too wet rot or grow fungus. Seeds past their expiry date lose the power to sprout.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CHECK SEED QUALITY ===== -->
+    <section id="check" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Check Seed Quality</h2>
+        <p class="section-intro">Fill in the details below. All fields are required.</p>
+
+        <div class="check-layout">
+          <form id="seedForm" class="form-card" novalidate>
+
+            <div id="errorBox" class="error-box" role="alert" hidden></div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="farmerName">Farmer name</label>
+                <input type="text" id="farmerName" placeholder="Enter your name">
+              </div>
+
+              <div class="field">
+                <label for="cropName">Crop name</label>
+                <select id="cropName">
+                  <option value="">Select crop</option>
+                  <option>Wheat</option>
+                  <option>Rice</option>
+                  <option>Maize</option>
+                  <option>Cotton</option>
+                  <option>Tomato</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="sellerName">Seed brand or seller name</label>
+                <input type="text" id="sellerName" placeholder="Name of the brand or shop">
+              </div>
+
+              <div class="field">
+                <label for="purchaseDate">Purchase date</label>
+                <input type="date" id="purchaseDate">
+              </div>
+
+              <div class="field">
+                <label for="expiryDate">Expiry date</label>
+                <input type="date" id="expiryDate">
+              </div>
+
+              <div class="field">
+                <label for="seedsTested">Number of seeds tested</label>
+                <input type="number" id="seedsTested" min="1" step="1" placeholder="e.g. 100">
+              </div>
+
+              <div class="field">
+                <label for="seedsGerminated">Number of seeds germinated</label>
+                <input type="number" id="seedsGerminated" min="0" step="1" placeholder="e.g. 82">
+              </div>
+
+              <div class="field">
+                <label for="purity">Purity percentage (0 to 100)</label>
+                <input type="number" id="purity" min="0" max="100" step="any" placeholder="e.g. 96">
+              </div>
+
+              <div class="field">
+                <label for="moisture">Moisture percentage (0 to 100)</label>
+                <input type="number" id="moisture" min="0" max="100" step="any" placeholder="e.g. 11">
+              </div>
+
+              <div class="field">
+                <label for="appearance">Seed appearance</label>
+                <select id="appearance">
+                  <option value="">Select appearance</option>
+                  <option>Healthy</option>
+                  <option>Slightly damaged</option>
+                  <option>Damaged</option>
+                  <option>Discolored or fungus</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="sizeWeight">Seed size and weight</label>
+                <select id="sizeWeight">
+                  <option value="">Select size and weight</option>
+                  <option>Uniform</option>
+                  <option>Mixed sizes</option>
+                  <option>Very small or light</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="packaging">Packaging condition</label>
+                <select id="packaging">
+                  <option value="">Select packaging</option>
+                  <option>Sealed and labeled</option>
+                  <option>Opened</option>
+                  <option>No label</option>
+                  <option>Damaged packet</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="button-row">
+              <button type="submit" class="btn btn-primary">Check Seed Quality</button>
+              <button type="reset" id="resetBtn" class="btn btn-secondary">Reset</button>
+            </div>
+          </form>
+
+          <!-- Result panel -->
+          <div class="result-card" id="resultCard" aria-live="polite">
+            <div id="resultEmpty" class="result-empty">
+              <h3>Your result will appear here</h3>
+              <p>Enter the test values and press <strong>Check Seed Quality</strong>. You will get a score out of 100, a result label and advice for sowing.</p>
+            </div>
+
+            <div id="resultContent" hidden>
+              <h3>Quality Result</h3>
+              <p class="result-for" id="resultFor"></p>
+
+              <div class="score-row">
+                <span class="score-number"><span id="scoreValue">0</span><small> / 100</small></span>
+                <span id="resultBadge" class="badge"></span>
+              </div>
+
+              <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Quality score">
+                <div id="progressFill" class="progress-fill"></div>
+              </div>
+
+              <p class="germ-line">Germination: <strong id="germValue">0%</strong></p>
+
+              <p id="resultMessage" class="result-message"></p>
+
+              <div id="warningsWrap" hidden>
+                <h4>Things to watch</h4>
+                <ul id="warningsList" class="warn-list"></ul>
+              </div>
+
+              <h4>Marks breakdown</h4>
+              <table class="breakdown">
+                <tbody id="breakdownBody"></tbody>
+              </table>
+
+              <h4>Suggestions</h4>
+              <ul id="suggestionsList" class="suggest-list"></ul>
+
+              <button type="button" id="downloadBtn" class="btn btn-primary">Download Result</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SEED GUIDE ===== -->
+    <section id="guide" class="section">
+      <div class="container">
+        <h2 class="section-title">Seed Guide</h2>
+        <p class="section-intro">Simple explanations of the words used in this tool.</p>
+
+        <div class="cards guide-cards">
+          <article class="card">
+            <h3>Germination test</h3>
+            <p>Place 100 seeds on a damp cloth or paper towel and keep them warm. After the crop's usual sprouting time, count how many have sprouted. If 85 sprouted, germination is 85%.</p>
+          </article>
+          <article class="card">
+            <h3>Seed purity</h3>
+            <p>Purity is the share of the lot that is the true seed of your crop. The rest may be weed seeds, other crop seeds, stones, husk or broken seed. Higher purity is better.</p>
+          </article>
+          <article class="card">
+            <h3>Moisture content</h3>
+            <p>This is the amount of water inside the seed. Too much moisture causes mould and early sprouting in the bag. Too little can make seeds brittle. Each crop has a safe range.</p>
+          </article>
+          <article class="card">
+            <h3>Seed vigor</h3>
+            <p>Vigor is how fast and strong a seed grows, even in less than perfect soil. Vigorous seeds sprout together and give sturdy seedlings that handle heat, cold and dry spells better.</p>
+          </article>
+          <article class="card">
+            <h3>How to identify fake or damaged seeds</h3>
+            <ul>
+              <li>No label, no lot number or a torn packet</li>
+              <li>Seeds that are shrivelled, broken or very light</li>
+              <li>Spots, powder, bad smell or fungus</li>
+              <li>Tiny holes made by insects</li>
+              <li>Mixed sizes and colours in one lot</li>
+              <li>A price far below the market rate</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section section-alt">
+      <div class="container about-box">
+        <h2 class="section-title">About</h2>
+        <p>
+          The Smart Seed Quality Identification System helps farmers judge whether a seed lot is
+          likely to be good before planting. It uses test values entered by the user to find poor,
+          damaged, expired or fake-looking seed lots, then gives a quality score with simple advice.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>Smart Seed Quality Identification System &copy; <span id="year"></span></p>
+      <p>College demonstration project. Results are a guide only. For official testing, visit a certified seed testing laboratory.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
